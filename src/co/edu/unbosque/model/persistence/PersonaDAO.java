@@ -41,8 +41,8 @@ public class PersonaDAO {
 		return encontrado;
 	}
 	
-	public boolean agregarPersona(int id, String nombre, String apellido, char genero, String alias, String contrasena, String correo, Date fecha, float ingresos, String divorcios, int numLR, int numLO, int numM, String estado, ArrayList<Persona> personas, File file) {
-		Persona p = new Persona(id, nombre, apellido, genero, alias, contrasena, correo, fecha, ingresos, divorcios, numLR, numLO, numM, estado);
+	public boolean agregarPersona(int id, String nombre, String apellido, String genero, String alias, String contrasena, String correo, String fecha, int edad, double ingresos, String divorcios, int numLR, int numLO, int numM, String estado, ArrayList<Persona> personas, File file) {
+		Persona p = new Persona(id, nombre, apellido, genero, alias, contrasena, correo, fecha, edad, ingresos, divorcios, numLR, numLO, numM, estado);
 
 		if (buscarPersona(alias, personas) == null && p.getEdad() > 18) {
 			personas.add(p);
@@ -70,7 +70,7 @@ public class PersonaDAO {
 		return resp;
 	}
 	
-	public boolean modificarPersona(int id, String nombre, String apellido, char genero, String alias, String contrasena, String correo, Date fecha, float ingresos, String divorcios, String estado, ArrayList<Persona> personas, File file) {
+	public boolean modificarPersona(int id, String nombre, String apellido, String genero, String alias, String contrasena, String correo, String fecha, int edad, double ingresos, String divorcios, String estado, ArrayList<Persona> personas, File file) {
 
 		Persona p = buscarPersona(alias, personas);
 		Persona p2 = p;
@@ -119,12 +119,12 @@ public class PersonaDAO {
 			if(listaTop.size() <= 10) {
 				switch (genero) {
 				case "M":
-					if (personas.get(i).getGenero() == "M".charAt(0)) {
+					if (personas.get(i).getGenero().equals("M")) {
 						listaTop.add(personas.get(i));
 					}
 					break;
 				case "F":
-					if (personas.get(i).getGenero() == "F".charAt(0)) {
+					if (personas.get(i).getGenero().equals("F")) {
 						listaTop.add(personas.get(i));
 					}
 					break;

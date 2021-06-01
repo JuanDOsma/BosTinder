@@ -6,21 +6,21 @@ public class Persona {
 	private int id;
 	private String nombre;
 	private String apellido;
-	private char genero;
+	private String genero;
 	private String alias;
 	private String contrasena;
 	private String correo;
-	private Date fecha;
+	private String fecha;
 	private int edad;
-	private float ingresos;
+	private double ingresos;
 	private String divorcios;
 	private int numLR; // número de like recibidos
 	private int numLO; // número de likes ortorgados
 	private int numM; // número de matches
 	private String estado;
 	
-	public Persona(int id, String nombre, String apellido, char genero, String alias, String contrasena, String correo,
-			Date fecha, float ingresos, String divorcios, int numLR, int numLO, int numM, String estado) {
+	public Persona(int id, String nombre, String apellido, String genero, String alias, String contrasena, String correo,
+			String fecha, int edad, double ingresos, String divorcios, int numLR, int numLO, int numM, String estado) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -30,6 +30,7 @@ public class Persona {
 		this.contrasena = contrasena;
 		this.correo = correo;
 		this.fecha = fecha;
+		this.edad = edad;
 		this.ingresos = ingresos;
 		this.divorcios = divorcios;
 		this.numLR = numLR;
@@ -56,10 +57,10 @@ public class Persona {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public char getGenero() {
+	public String getGenero() {
 		return genero;
 	}
-	public void setGenero(char genero) {
+	public void setGenero(String genero) {
 		this.genero = genero;
 	}
 	public String getAlias() {
@@ -80,16 +81,16 @@ public class Persona {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	public float getIngresos() {
+	public double getIngresos() {
 		return ingresos;
 	}
-	public void setIngresos(float ingresos) {
+	public void setIngresos(double ingresos) {
 		this.ingresos = ingresos;
 	}
 	public String getDivorcios() {
